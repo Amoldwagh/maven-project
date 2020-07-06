@@ -15,5 +15,14 @@ pipeline
                     }
             }
         }
+        stage('please test code')
+        {
+            steps {
+                withMaven(jdk: 'localjdk', maven: 'localmaven') {
+                   sh 'mvn test'
+                    }
+            }
+        }
+
     }
 }
