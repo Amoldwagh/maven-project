@@ -23,6 +23,14 @@ pipeline
                     }
             }
         }
+        stage('please package code')
+        {
+            steps {
+                withMaven(jdk: 'localjdk', maven: 'localmaven') {
+                   sh 'mvn package'
+                    }
+            }
+        }
 
     }
 }
